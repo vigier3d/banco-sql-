@@ -1,0 +1,22 @@
+﻿-- ============================================
+-- INSERINDO DADOS DE TESTE
+-- ============================================
+
+-- Inserindo clientes
+INSERT INTO cliente (nome, email, telefone) VALUES
+('João Silva', 'joao@email.com', '21999999999'),
+('Maria Souza', 'maria@email.com', '21888888888');
+
+-- Inserindo produtos
+INSERT INTO produto (nome, preco, estoque) VALUES
+('Notebook', 3500.00, 10),
+('Mouse', 50.00, 100),
+('Teclado', 120.00, 50);
+
+-- Criando pedido para o cliente 1
+INSERT INTO pedido (id_cliente) VALUES (1);
+
+-- Inserindo itens no pedido (chave composta evita duplicação)
+INSERT INTO itens_pedido (id_pedido, id_produto, quantidade, preco_unitario) VALUES
+(1, 1, 1, 3500.00), -- Notebook
+(1, 2, 2, 50.00);   -- 2 Mouses
